@@ -1,0 +1,60 @@
+﻿@model BilReperationFirmaWebApp.Models.Customer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phonenumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phonenumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SignUpDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SignUpDate)
+        </dd>
+        <h5>Orders</h5>
+        <hr />
+        @foreach (var order in Model.Orders)
+        {
+            <dl class="row">
+                <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Orders.FirstOrDefault().IsFinished)</dt>
+                <dd class="col-sm-10">
+                    @order.IsFinished
+                </dd>
+                <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Orders.FirstOrDefault().Price)</dt>
+                <dd class="col-sm-10">
+                    @order.Price
+                </dd>
+                <td>
+                    @foreach (var orderType in order.OrderTypes)
+                    {
+                        <dt class="col-sm-2">Service</dt>
+                        <dd class="col-sm-10">
+                            @orderType.Type.Description
+                        </dd>
+                    }
+                </td>
+            </dl>
+        }
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
