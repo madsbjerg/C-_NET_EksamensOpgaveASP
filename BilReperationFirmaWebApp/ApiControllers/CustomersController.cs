@@ -109,13 +109,23 @@ namespace BilReperationFirmaWebApp.ApiControllers
             {
                 return NotFound();
             }
+
+            // Remove Customer
             var customer = await _context.Customers.FindAsync(id);
-            if (customer == null)
+            if (customer != null)
             {
-                return NotFound();
+                _context.Customers.Remove(customer);
             }
 
-            _context.Customers.Remove(customer);
+            // Remove Order links to removed customer
+            var orders = await _context.Orders.Where(o => o.CustomerId == id).ToListAsync();
+            foreach (var order in orders)
+            {
+                order.CustomerId = null;
+                order.Customer = null;
+                _context.Update(order);
+            }
+
             await _context.SaveChangesAsync();
 
             return NoContent();
