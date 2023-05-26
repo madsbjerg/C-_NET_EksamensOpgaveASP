@@ -80,8 +80,6 @@ namespace BilReperationFirmaWebApp.Controllers
         }
 
         // POST: Customers/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phonenumber,SignUpDate")] Customer customer)
@@ -157,6 +155,7 @@ namespace BilReperationFirmaWebApp.Controllers
                 _context.Update(order);
             }
             
+            // Save changes
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

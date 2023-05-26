@@ -1,5 +1,6 @@
 using BilReperationFirmaWebApp.DAL;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
 namespace BilReperationFirmaWebApp
 {
@@ -9,8 +10,9 @@ namespace BilReperationFirmaWebApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            // Add services to the container and add NewtonsoftJson to be able to include orders and ordertypes to Customer Get in API
+            builder.Services.AddControllersWithViews()
+                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             builder.Services.AddDbContext<BilFirmaContext>(options => options.UseSqlServer(
                 builder.Configuration.GetConnectionString("DefaultConnection")));
             var app = builder.Build();

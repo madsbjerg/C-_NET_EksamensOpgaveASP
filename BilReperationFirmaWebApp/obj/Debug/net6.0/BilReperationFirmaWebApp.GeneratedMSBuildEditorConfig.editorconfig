@@ -44,6 +44,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/terez/source/repos/BilReperationFirmaWebApp/BilReperationFirmaWebApp/Views/Mechanics/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVjaGFuaWNzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/terez/source/repos/BilReperationFirmaWebApp/BilReperationFirmaWebApp/Views/Mechanics/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVjaGFuaWNzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/terez/source/repos/BilReperationFirmaWebApp/BilReperationFirmaWebApp/Views/Mechanics/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVjaGFuaWNzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/terez/source/repos/BilReperationFirmaWebApp/BilReperationFirmaWebApp/Views/Mechanics/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVjaGFuaWNzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/terez/source/repos/BilReperationFirmaWebApp/BilReperationFirmaWebApp/Views/Mechanics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVjaGFuaWNzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/terez/source/repos/BilReperationFirmaWebApp/BilReperationFirmaWebApp/Views/Orders/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

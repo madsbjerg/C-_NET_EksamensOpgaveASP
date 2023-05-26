@@ -41,7 +41,13 @@ namespace BilReperationFirmaWebApp.ApiControllers
             {
                 return NotFound();
             }
-            var customer = await _context.Customers.FindAsync(id);
+
+            // Using NewtonsoftJson package to avoid object cycle (going from OrderType to Order get indefinitely)
+            var customer = await _context.Customers
+                    .Include(c => c.Orders)
+                    .ThenInclude(o => o.OrderTypes)
+                    .ThenInclude(ot => ot.Type)
+                    .FirstOrDefaultAsync(m => m.Id == id);
 
             if (customer == null)
             {

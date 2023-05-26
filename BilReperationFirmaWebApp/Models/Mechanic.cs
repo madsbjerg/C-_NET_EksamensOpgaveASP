@@ -9,7 +9,7 @@ namespace BilReperationFirmaWebApp.Models
 
         [Display(Name="Hiring Date")]
         [DataType(DataType.Date)]
-        public DateTime HiringDate { get; set; }
+        public DateTime? HiringDate { get; set; }
         [DisplayFormat(DataFormatString = "{0:C2}")]
         public double Salary { get; set; }
         public ICollection<Order>? Orders { get; set; }
